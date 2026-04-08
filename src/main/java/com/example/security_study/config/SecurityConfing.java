@@ -15,5 +15,8 @@ public class SecurityConfing {
                 .authorizeHttpRequests(auth -> auth
                         // .requestMatchers() : 특정 경로를 지정
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/user").authenticated()
+                        .anyRequest().permitAll()
+                )
     }
 }
