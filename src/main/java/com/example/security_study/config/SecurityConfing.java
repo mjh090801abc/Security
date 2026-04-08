@@ -21,5 +21,9 @@ public class SecurityConfing {
                         // 위에 URL을 제외한 나머지 URL은 제약 조건 없이 허가
                         .anyRequest().permitAll()
                 )
+                //
+                .formLogin(form -> form
+                        .permitAll()
+                );
     }
 }
