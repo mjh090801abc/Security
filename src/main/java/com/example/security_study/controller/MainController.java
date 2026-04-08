@@ -10,4 +10,9 @@ public class MainController {
     public String home() {
         return "메인 페이지 (누구나 접근 가능)";
     }
+
+    @GetMapping("/user")
+    public String user() {
+        return "로그인 성공! user 페이지";
+    }
 }
