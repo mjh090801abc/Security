@@ -11,7 +11,9 @@ public class SecurityConfing {
     // SecurityFilterChain : 반환 타입(보안 필터 체인이라는 객체를 반환)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                // .authorizeHttpRequests() : HTTP 요청에 대한 인가(Authorization) 규칙을 설정할 때 사용하는 핵심 메서드
                 .authorizeHttpRequests(auth -> auth
+                        // .requestMatchers() : 특정 경로를 지정
                         .requestMatchers("/").permitAll()
     }
 }
