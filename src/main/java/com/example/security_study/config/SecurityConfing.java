@@ -25,5 +25,6 @@ public class SecurityConfing {
                 .formLogin(form -> form
                         .permitAll()
                 );
+        return http.build();
     }
 }
