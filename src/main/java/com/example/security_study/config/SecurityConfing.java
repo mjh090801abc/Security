@@ -21,7 +21,7 @@ public class SecurityConfing {
                         // 위에 URL을 제외한 나머지 URL은 제약 조건 없이 허가
                         .anyRequest().permitAll()
                 )
-                //
+                // 폼(Form) 기반 로그인 방식을 사용
                 .formLogin(form -> form
                         .permitAll()
                 );
