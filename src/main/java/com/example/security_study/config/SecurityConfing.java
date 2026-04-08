@@ -10,6 +10,8 @@ public class SecurityConfing {
     @Bean// 이 메서드가 생성해서 반환하는 객체를 스프링 컨테이너가 관리하는 공용 객체(Bean)로 등록
     // SecurityFilterChain : 반환 타입(보안 필터 체인이라는 객체를 반환)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/").permitAll()
     }
 }
