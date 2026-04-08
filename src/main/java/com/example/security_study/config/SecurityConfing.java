@@ -15,7 +15,10 @@ public class SecurityConfing {
                 .authorizeHttpRequests(auth -> auth
                         // .requestMatchers() : 특정 경로를 지정
                         .requestMatchers("/").permitAll()
+                        // "/user" URL로 시작하면 인증된 사용자만 들어올 수 있음
+                        // authenticated() : 인증된 사용자만 허가
                         .requestMatchers("/user").authenticated()
+                        // 위에 URL을 제외한 나머지 URL은 제약 조건 없이 허가
                         .anyRequest().permitAll()
                 )
     }
